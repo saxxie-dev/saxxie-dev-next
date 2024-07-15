@@ -2,32 +2,191 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+/* https://www.realtimecolors.com/?colors=f1f3ec-10110e-a9e0c3-28432d-c39db7&fonts=Poppins-Poppins */
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text: #11130c;
+    --background: #f0f1ee;
+    --primary: #1f5639;
+    --secondary: #bcd7c1;
+    --accent: #623c56;
+
+    --text-50: #f4f5ef;
+    --text-100: #e8ebe0;
+    --text-200: #d1d8c0;
+    --text-300: #bac4a1;
+    --text-400: #a3b082;
+    --text-500: #8c9d62;
+    --text-600: #707d4f;
+    --text-700: #545e3b;
+    --text-800: #383f27;
+    --text-900: #1c1f14;
+    --text-950: #0e100a;
+
+    --background-50: #f3f4f1;
+    --background-100: #e6e8e3;
+    --background-200: #ced1c7;
+    --background-300: #b5baab;
+    --background-400: #9ca38f;
+    --background-500: #848c73;
+    --background-600: #69705c;
+    --background-700: #4f5445;
+    --background-800: #35382e;
+    --background-900: #1a1c17;
+    --background-950: #0d0e0b;
+
+    --primary-50: #ecf8f2;
+    --primary-100: #daf1e5;
+    --primary-200: #b4e4ca;
+    --primary-300: #8fd6b0;
+    --primary-400: #69c996;
+    --primary-500: #44bb7c;
+    --primary-600: #369663;
+    --primary-700: #29704a;
+    --primary-800: #1b4b31;
+    --primary-900: #0e2519;
+    --primary-950: #07130c;
+
+    --secondary-50: #eff5f0;
+    --secondary-100: #dfece1;
+    --secondary-200: #bfd9c4;
+    --secondary-300: #9fc6a6;
+    --secondary-400: #80b389;
+    --secondary-500: #609f6b;
+    --secondary-600: #4d8056;
+    --secondary-700: #396040;
+    --secondary-800: #26402b;
+    --secondary-900: #132015;
+    --secondary-950: #0a100b;
+
+    --accent-50: #f5eff3;
+    --accent-100: #ecdfe8;
+    --accent-200: #d8c0d0;
+    --accent-300: #c5a0b9;
+    --accent-400: #b181a2;
+    --accent-500: #9e618b;
+    --accent-600: #7e4e6f;
+    --accent-700: #5f3a53;
+    --accent-800: #3f2737;
+    --accent-900: #20131c;
+    --accent-950: #100a0e;
+  }
+
+  .dark {
+    --text: #f1f3ec;
+    --background: #10110e;
+    --primary: #a9e0c3;
+    --secondary: #28432d;
+    --accent: #c39db7;
+
+    --text-50: #0e100a;
+    --text-100: #1c1f14;
+    --text-200: #383f27;
+    --text-300: #545e3b;
+    --text-400: #707d4f;
+    --text-500: #8c9d62;
+    --text-600: #a3b082;
+    --text-700: #bac4a1;
+    --text-800: #d1d8c0;
+    --text-900: #e8ebe0;
+    --text-950: #f4f5ef;
+
+    --background-50: #0d0e0b;
+    --background-100: #1a1c17;
+    --background-200: #35382e;
+    --background-300: #4f5445;
+    --background-400: #69705c;
+    --background-500: #848c73;
+    --background-600: #9ca38f;
+    --background-700: #b5baab;
+    --background-800: #ced1c7;
+    --background-900: #e6e8e3;
+    --background-950: #f3f4f1;
+
+    --primary-50: #07130c;
+    --primary-100: #0e2519;
+    --primary-200: #1b4b31;
+    --primary-300: #29704a;
+    --primary-400: #369663;
+    --primary-500: #44bb7c;
+    --primary-600: #69c996;
+    --primary-700: #8fd6b0;
+    --primary-800: #b4e4ca;
+    --primary-900: #daf1e5;
+    --primary-950: #ecf8f2;
+
+    --secondary-50: #0a100b;
+    --secondary-100: #132015;
+    --secondary-200: #26402b;
+    --secondary-300: #396040;
+    --secondary-400: #4d8056;
+    --secondary-500: #609f6b;
+    --secondary-600: #80b389;
+    --secondary-700: #9fc6a6;
+    --secondary-800: #bfd9c4;
+    --secondary-900: #dfece1;
+    --secondary-950: #eff5f0;
+
+    --accent-50: #100a0e;
+    --accent-100: #20131c;
+    --accent-200: #3f2737;
+    --accent-300: #5f3a53;
+    --accent-400: #7e4e6f;
+    --accent-500: #9e618b;
+    --accent-600: #b181a2;
+    --accent-700: #c5a0b9;
+    --accent-800: #d8c0d0;
+    --accent-900: #ecdfe8;
+    --accent-950: #f5eff3;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text);
+  background-color: var(--background);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Inter";
+  font-weight: 700;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* 16px */
+
+h1 {
+  font-size: 4.21rem;
+  /* 67.36px */
+}
+
+h2 {
+  font-size: 3.158rem;
+  /* 50.56px */
+}
+
+h3 {
+  font-size: 2.369rem;
+  /* 37.92px */
+}
+
+h4 {
+  font-size: 1.777rem;
+  /* 28.48px */
+}
+
+h5 {
+  font-size: 1.333rem;
+  /* 21.28px */
+}
+
+small {
+  font-size: 0.75rem;
+  /* 12px */
 }
