@@ -27,6 +27,14 @@ const config: Config = {
       normal: '400',
       bold: '700',
     },
+    screens: {
+      'xs': '200px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     colors: {
       transparent: 'transparent',
       'text': {
